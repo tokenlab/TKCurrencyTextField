@@ -14,7 +14,11 @@ import UIKit
     @IBInspectable var isCurrencySymbolHidden: Bool = false
     private var _maskHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ())? = nil
 
-    public var locale: Locale = Locale.current
+    public var locale: Locale = Locale.current {
+        didSet {
+            setAmount(defaultValue)
+        }
+    }
 
     var maskHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ())? {
         get {
@@ -35,9 +39,6 @@ import UIKit
     }
     
     private func initTextField(){
-        keyboardType = UIKeyboardType.decimalPad
-        setAmount(defaultValue)
-        
         let currencyHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ()) = {
             (textField, range, replacementString) in
             let nsString: NSString = textField.text as NSString? ?? ""
@@ -57,6 +58,8 @@ import UIKit
             textField.text = textFieldStringValue
         }
         setMaskHandler(currencyHandler)
+        setAmount(defaultValue)
+        keyboardType = UIKeyboardType.decimalPad
     }
     
     public func setMaskHandler(_ handler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String)->())?) {

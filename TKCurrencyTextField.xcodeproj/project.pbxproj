@@ -14,7 +14,7 @@
 		834D7AE11EC3752E00579CB1 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7ADF1EC3752E00579CB1 /* Double+Currency.swift */; };
 		834D7AE21EC3752E00579CB1 /* String+Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7AE01EC3752E00579CB1 /* String+Number.swift */; };
 		834D7AEA1EC3787300579CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7AE91EC3787300579CB1 /* AppDelegate.swift */; };
-		834D7AEC1EC3787300579CB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7AEB1EC3787300579CB1 /* ViewController.swift */; };
+		834D7AEC1EC3787300579CB1 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7AEB1EC3787300579CB1 /* MainTableViewController.swift */; };
 		834D7AEF1EC3787300579CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834D7AED1EC3787300579CB1 /* Main.storyboard */; };
 		834D7AF11EC3787300579CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834D7AF01EC3787300579CB1 /* Assets.xcassets */; };
 		834D7AF41EC3787300579CB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834D7AF21EC3787300579CB1 /* LaunchScreen.storyboard */; };
@@ -68,7 +68,7 @@
 		834D7AE01EC3752E00579CB1 /* String+Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Number.swift"; sourceTree = "<group>"; };
 		834D7AE71EC3787300579CB1 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		834D7AE91EC3787300579CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		834D7AEB1EC3787300579CB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		834D7AEB1EC3787300579CB1 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		834D7AEE1EC3787300579CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		834D7AF01EC3787300579CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		834D7AF31EC3787300579CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				834D7AE91EC3787300579CB1 /* AppDelegate.swift */,
-				834D7AEB1EC3787300579CB1 /* ViewController.swift */,
+				834D7AEB1EC3787300579CB1 /* MainTableViewController.swift */,
 				834D7AED1EC3787300579CB1 /* Main.storyboard */,
 				834D7AF01EC3787300579CB1 /* Assets.xcassets */,
 				834D7AF21EC3787300579CB1 /* LaunchScreen.storyboard */,
@@ -336,7 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				834D7AEC1EC3787300579CB1 /* ViewController.swift in Sources */,
+				834D7AEC1EC3787300579CB1 /* MainTableViewController.swift in Sources */,
 				834D7AEA1EC3787300579CB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -466,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

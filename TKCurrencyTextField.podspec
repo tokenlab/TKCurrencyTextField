@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.license = { type: 'MIT', file: 'LICENSE' }
   spec.authors = { "Tokenlab" => 'danieleboscolo@tokenlab.com.br' }
 
-  spec.platform = :ios, "9.0"
+  spec.platform = :ios, "8.0"
   spec.requires_arc = true
   spec.source = { git: "https://github.com/tokenlab/TKCurrencyTextField.git", tag: "v#{spec.version}", submodules: true }
   spec.source_files = "TKCurrencyTextField/**/*.{h,swift}"
