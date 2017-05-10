@@ -9,13 +9,11 @@
 import UIKit
 
 @IBDesignable open class TKCurrencyTextField: UITextField {
-    @IBInspectable var maxDigits: Int = 20
+    @IBInspectable var maxDigits: Int = 15
     @IBInspectable var defaultValue: Double = 0.00
-    @IBInspectable var isCurrencySymbolHidden: Bool = false
-    private var _maskHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ())? = nil
-
-    public var locale: Locale = Locale.current
-
+    
+    fileprivate var _maskHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ())? = nil
+    
     var maskHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ())? {
         get {
             return _maskHandler
@@ -24,7 +22,7 @@ import UIKit
     
     // MARK: - init functions
     
-    override public init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         initTextField()
     }
@@ -34,7 +32,7 @@ import UIKit
         initTextField()
     }
     
-    private func initTextField(){
+    func initTextField(){
         keyboardType = UIKeyboardType.decimalPad
         setAmount(defaultValue)
         
@@ -53,13 +51,13 @@ import UIKit
             }
             
             let textFieldNewValue = textFieldNumber/100
-            let textFieldStringValue = textFieldNewValue.currencyStringValue(with: self.locale, self.isCurrencySymbolHidden)
+            let textFieldStringValue = textFieldNewValue.currencyStringValue
             textField.text = textFieldStringValue
         }
         setMaskHandler(currencyHandler)
     }
     
-    public func setMaskHandler(_ handler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String)->())?) {
+    func setMaskHandler(_ handler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String)->())?) {
         _maskHandler = handler
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
@@ -74,7 +72,7 @@ import UIKit
         setCursorOriginalPosition(cursorOffset, oldTextFieldLength: textFieldLength)
     }
     
-    private func getOriginalCursorPosition() -> Int {
+    fileprivate func getOriginalCursorPosition() -> Int {
         var cursorOffset: Int = 0
         let startPosition: UITextPosition = self.beginningOfDocument
         if let selectedTextRange = self.selectedTextRange{
@@ -83,7 +81,7 @@ import UIKit
         return cursorOffset
     }
     
-    private func setCursorOriginalPosition(_ cursorOffset: Int, oldTextFieldLength : Int?){
+    fileprivate func setCursorOriginalPosition(_ cursorOffset: Int, oldTextFieldLength : Int?){
         let newLength = self.text?.characters.count
         let startPosition : UITextPosition = self.beginningOfDocument
         if let oldTextFieldLength = oldTextFieldLength, let newLength = newLength, oldTextFieldLength > cursorOffset {
@@ -98,16 +96,15 @@ import UIKit
     
     // MARK: - Custom functions
     
-    public func setAmount (_ amount: Double) {
-        let textFieldStringValue = amount.currencyStringValue(with: locale, isCurrencySymbolHidden)
+    func setAmount (_ amount: Double) {
+        let textFieldStringValue = amount.currencyStringValue
         text = textFieldStringValue
     }
     
-    public var getAmount: Double {
+    var getAmount: Double {
         if let text = text {
-            return text.currencyStringToDouble(with: locale)
+            return text.currencyStringToDouble
         }
         return defaultValue
     }
 }
-

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FW6-Cw-DsL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TKCurrencyTextField-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVr-XN-h7Q" customClass="TKCurrencyTextField" customModule="TKCurrencyTextField">
+                                <rect key="frame" x="24" y="140" width="327" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M51-qG-4Ku">
+                                <rect key="frame" x="24" y="104" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United Kingdom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okb-Ti-miw">
+                                <rect key="frame" x="24" y="200" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="49M-SE-INn" customClass="TKCurrencyTextField" customModule="TKCurrencyTextField">
+                                <rect key="frame" x="24" y="236" width="327" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxDigits">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brazil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0o-hv-Eho">
+                                <rect key="frame" x="24" y="296" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nd1-uo-Fl1" customClass="TKCurrencyTextField" customModule="TKCurrencyTextField">
+                                <rect key="frame" x="24" y="332" width="327" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxDigits">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nd1-uo-Fl1" firstAttribute="top" secondItem="u0o-hv-Eho" secondAttribute="bottom" constant="15" id="1Hb-q3-xiH"/>
+                            <constraint firstItem="49M-SE-INn" firstAttribute="top" secondItem="Okb-Ti-miw" secondAttribute="bottom" constant="15" id="3eI-Uu-SYE"/>
+                            <constraint firstAttribute="trailing" secondItem="Okb-Ti-miw" secondAttribute="trailing" constant="24" id="8mD-Iy-Vuh"/>
+                            <constraint firstAttribute="trailing" secondItem="49M-SE-INn" secondAttribute="trailing" constant="24" id="FgO-D0-6S8"/>
+                            <constraint firstItem="49M-SE-INn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="FhR-U1-e9B"/>
+                            <constraint firstItem="u0o-hv-Eho" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="IcO-vW-8Vd"/>
+                            <constraint firstItem="Okb-Ti-miw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="OZF-xv-kNV"/>
+                            <constraint firstItem="hVr-XN-h7Q" firstAttribute="top" secondItem="M51-qG-4Ku" secondAttribute="bottom" constant="15" id="P3p-oJ-4qB"/>
+                            <constraint firstAttribute="trailing" secondItem="u0o-hv-Eho" secondAttribute="trailing" constant="24" id="Qrs-w5-ket"/>
+                            <constraint firstItem="M51-qG-4Ku" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="R6y-dy-mwe"/>
+                            <constraint firstAttribute="trailing" secondItem="M51-qG-4Ku" secondAttribute="trailing" constant="24" id="Uel-sL-JI9"/>
+                            <constraint firstItem="Okb-Ti-miw" firstAttribute="top" secondItem="hVr-XN-h7Q" secondAttribute="bottom" constant="30" id="VF1-I2-AwC"/>
+                            <constraint firstItem="M51-qG-4Ku" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="XTP-Vo-eHJ"/>
+                            <constraint firstItem="Nd1-uo-Fl1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="jfb-XV-jx9"/>
+                            <constraint firstAttribute="trailing" secondItem="Nd1-uo-Fl1" secondAttribute="trailing" constant="24" id="mbt-2r-dJM"/>
+                            <constraint firstAttribute="trailing" secondItem="hVr-XN-h7Q" secondAttribute="trailing" constant="24" id="puZ-Om-yPl"/>
+                            <constraint firstItem="hVr-XN-h7Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="qMM-h3-hKF"/>
+                            <constraint firstItem="u0o-hv-Eho" firstAttribute="top" secondItem="49M-SE-INn" secondAttribute="bottom" constant="30" id="xfV-3d-d0c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TKCurrencyTextField" id="QbA-1l-14j"/>
+                    <connections>
+                        <outlet property="firstCurrencyTextField" destination="hVr-XN-h7Q" id="q65-CD-vEy"/>
+                        <outlet property="secondCurrencyTextField" destination="49M-SE-INn" id="mJp-UB-zTV"/>
+                        <outlet property="thirdCurrencyTextField" destination="Nd1-uo-Fl1" id="A5M-DK-Scq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="755"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i3h-7Q-lR4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FW6-Cw-DsL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vnf-cg-NBD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="J8S-UX-Nob"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W16-ga-5Hh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="755.17241379310349"/>
+        </scene>
+    </scenes>
+</document>

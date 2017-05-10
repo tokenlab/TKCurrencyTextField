@@ -13,6 +13,16 @@
 		834D7ADD1EC374F700579CB1 /* TKCurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7ADC1EC374F700579CB1 /* TKCurrencyTextField.swift */; };
 		834D7AE11EC3752E00579CB1 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7ADF1EC3752E00579CB1 /* Double+Currency.swift */; };
 		834D7AE21EC3752E00579CB1 /* String+Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7AE01EC3752E00579CB1 /* String+Number.swift */; };
+		834D7AEA1EC3787300579CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7AE91EC3787300579CB1 /* AppDelegate.swift */; };
+		834D7AEC1EC3787300579CB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D7AEB1EC3787300579CB1 /* ViewController.swift */; };
+		834D7AEF1EC3787300579CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834D7AED1EC3787300579CB1 /* Main.storyboard */; };
+		834D7AF11EC3787300579CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834D7AF01EC3787300579CB1 /* Assets.xcassets */; };
+		834D7AF41EC3787300579CB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834D7AF21EC3787300579CB1 /* LaunchScreen.storyboard */; };
+		834D7B1A1EC37CC600579CB1 /* Double+Currency.swift in Resources */ = {isa = PBXBuildFile; fileRef = 834D7ADF1EC3752E00579CB1 /* Double+Currency.swift */; };
+		834D7B1B1EC37CC600579CB1 /* String+Number.swift in Resources */ = {isa = PBXBuildFile; fileRef = 834D7AE01EC3752E00579CB1 /* String+Number.swift */; };
+		834D7B1C1EC37CC600579CB1 /* TKCurrencyTextField.swift in Resources */ = {isa = PBXBuildFile; fileRef = 834D7ADC1EC374F700579CB1 /* TKCurrencyTextField.swift */; };
+		83C6BE7B1EC3903E00B01C2C /* TKCurrencyTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834D7AC21EC374BE00579CB1 /* TKCurrencyTextField.framework */; };
+		83C6BE7C1EC3903E00B01C2C /* TKCurrencyTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 834D7AC21EC374BE00579CB1 /* TKCurrencyTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +33,28 @@
 			remoteGlobalIDString = 834D7AC11EC374BE00579CB1;
 			remoteInfo = TKCurrencyTextField;
 		};
+		83C6BE7D1EC3903F00B01C2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834D7AB91EC374BE00579CB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 834D7AC11EC374BE00579CB1;
+			remoteInfo = TKCurrencyTextField;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		83C6BE7F1EC3903F00B01C2C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				83C6BE7C1EC3903E00B01C2C /* TKCurrencyTextField.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		834D7AC21EC374BE00579CB1 /* TKCurrencyTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TKCurrencyTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +66,14 @@
 		834D7ADC1EC374F700579CB1 /* TKCurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKCurrencyTextField.swift; sourceTree = "<group>"; };
 		834D7ADF1EC3752E00579CB1 /* Double+Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		834D7AE01EC3752E00579CB1 /* String+Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Number.swift"; sourceTree = "<group>"; };
+		834D7AE71EC3787300579CB1 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		834D7AE91EC3787300579CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		834D7AEB1EC3787300579CB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		834D7AEE1EC3787300579CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		834D7AF01EC3787300579CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		834D7AF31EC3787300579CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		834D7AF51EC3787300579CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		834D7B1D1EC37F0900579CB1 /* TKCurrencyTextField.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TKCurrencyTextField.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +92,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		834D7AE41EC3787300579CB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83C6BE7B1EC3903E00B01C2C /* TKCurrencyTextField.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		834D7AB81EC374BE00579CB1 = {
 			isa = PBXGroup;
 			children = (
+				834D7AE81EC3787300579CB1 /* Example */,
 				834D7AC41EC374BE00579CB1 /* TKCurrencyTextField */,
 				834D7ACF1EC374BF00579CB1 /* TKCurrencyTextFieldTests */,
 				834D7AC31EC374BE00579CB1 /* Products */,
@@ -70,6 +118,7 @@
 			children = (
 				834D7AC21EC374BE00579CB1 /* TKCurrencyTextField.framework */,
 				834D7ACB1EC374BF00579CB1 /* TKCurrencyTextFieldTests.xctest */,
+				834D7AE71EC3787300579CB1 /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,10 +126,10 @@
 		834D7AC41EC374BE00579CB1 /* TKCurrencyTextField */ = {
 			isa = PBXGroup;
 			children = (
-				834D7ADE1EC3752500579CB1 /* Extensions */,
+				834D7B1D1EC37F0900579CB1 /* TKCurrencyTextField.podspec */,
 				834D7AC51EC374BE00579CB1 /* TKCurrencyTextField.h */,
 				834D7AC61EC374BE00579CB1 /* Info.plist */,
-				834D7ADC1EC374F700579CB1 /* TKCurrencyTextField.swift */,
+				834D7ADE1EC3752500579CB1 /* Classes */,
 			);
 			path = TKCurrencyTextField;
 			sourceTree = "<group>";
@@ -94,13 +143,27 @@
 			path = TKCurrencyTextFieldTests;
 			sourceTree = "<group>";
 		};
-		834D7ADE1EC3752500579CB1 /* Extensions */ = {
+		834D7ADE1EC3752500579CB1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				834D7ADC1EC374F700579CB1 /* TKCurrencyTextField.swift */,
 				834D7ADF1EC3752E00579CB1 /* Double+Currency.swift */,
 				834D7AE01EC3752E00579CB1 /* String+Number.swift */,
 			);
-			name = Extensions;
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		834D7AE81EC3787300579CB1 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				834D7AE91EC3787300579CB1 /* AppDelegate.swift */,
+				834D7AEB1EC3787300579CB1 /* ViewController.swift */,
+				834D7AED1EC3787300579CB1 /* Main.storyboard */,
+				834D7AF01EC3787300579CB1 /* Assets.xcassets */,
+				834D7AF21EC3787300579CB1 /* LaunchScreen.storyboard */,
+				834D7AF51EC3787300579CB1 /* Info.plist */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +216,25 @@
 			productReference = 834D7ACB1EC374BF00579CB1 /* TKCurrencyTextFieldTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		834D7AE61EC3787300579CB1 /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 834D7B0C1EC3787400579CB1 /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				834D7AE31EC3787300579CB1 /* Sources */,
+				834D7AE41EC3787300579CB1 /* Frameworks */,
+				834D7AE51EC3787300579CB1 /* Resources */,
+				83C6BE7F1EC3903F00B01C2C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83C6BE7E1EC3903F00B01C2C /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = 834D7AE71EC3787300579CB1 /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -174,6 +256,11 @@
 						DevelopmentTeam = 4EZK9PR9TK;
 						ProvisioningStyle = Automatic;
 					};
+					834D7AE61EC3787300579CB1 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 4EZK9PR9TK;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 834D7ABC1EC374BE00579CB1 /* Build configuration list for PBXProject "TKCurrencyTextField" */;
@@ -182,6 +269,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 834D7AB81EC374BE00579CB1;
 			productRefGroup = 834D7AC31EC374BE00579CB1 /* Products */;
@@ -190,6 +278,7 @@
 			targets = (
 				834D7AC11EC374BE00579CB1 /* TKCurrencyTextField */,
 				834D7ACA1EC374BF00579CB1 /* TKCurrencyTextFieldTests */,
+				834D7AE61EC3787300579CB1 /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +288,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834D7B1A1EC37CC600579CB1 /* Double+Currency.swift in Resources */,
+				834D7B1B1EC37CC600579CB1 /* String+Number.swift in Resources */,
+				834D7B1C1EC37CC600579CB1 /* TKCurrencyTextField.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +298,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		834D7AE51EC3787300579CB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834D7AF41EC3787300579CB1 /* LaunchScreen.storyboard in Resources */,
+				834D7AF11EC3787300579CB1 /* Assets.xcassets in Resources */,
+				834D7AEF1EC3787300579CB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +332,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		834D7AE31EC3787300579CB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834D7AEC1EC3787300579CB1 /* ViewController.swift in Sources */,
+				834D7AEA1EC3787300579CB1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -238,7 +349,31 @@
 			target = 834D7AC11EC374BE00579CB1 /* TKCurrencyTextField */;
 			targetProxy = 834D7ACD1EC374BF00579CB1 /* PBXContainerItemProxy */;
 		};
+		83C6BE7E1EC3903F00B01C2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 834D7AC11EC374BE00579CB1 /* TKCurrencyTextField */;
+			targetProxy = 83C6BE7D1EC3903F00B01C2C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		834D7AED1EC3787300579CB1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				834D7AEE1EC3787300579CB1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		834D7AF21EC3787300579CB1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				834D7AF31EC3787300579CB1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		834D7AD41EC374BF00579CB1 /* Debug */ = {
@@ -283,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -331,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -409,6 +544,34 @@
 			};
 			name = Release;
 		};
+		834D7B0D1EC3787400579CB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4EZK9PR9TK;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.tokenlab.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		834D7B0E1EC3787400579CB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4EZK9PR9TK;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.tokenlab.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -428,6 +591,7 @@
 				834D7AD81EC374BF00579CB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		834D7AD91EC374BF00579CB1 /* Build configuration list for PBXNativeTarget "TKCurrencyTextFieldTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +600,16 @@
 				834D7ADB1EC374BF00579CB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		834D7B0C1EC3787400579CB1 /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				834D7B0D1EC3787400579CB1 /* Debug */,
+				834D7B0E1EC3787400579CB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

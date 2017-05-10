@@ -9,13 +9,10 @@
 import Foundation
 
 extension Double {
-    func currencyStringValue(with locale: Locale, _ isCurrencySymbolHidden: Bool) -> String {
+    public var currencyStringValue: String {
         let formatter = NumberFormatter()
-        formatter.locale = locale
         formatter.numberStyle = .currency
-        if isCurrencySymbolHidden {
-            formatter.currencySymbol = ""
-        }
+        formatter.currencySymbol = ""
         return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
     }
 }
