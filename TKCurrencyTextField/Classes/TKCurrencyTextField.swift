@@ -21,13 +21,6 @@ import UIKit
         }
     }
     
-    
-    | definition               | var          | value          |   |   |
-    |--------------------------|--------------|----------------|--:|---|
-    | Maximum number of digits | maxDigits    | 15             |   |   |
-    | Initial UITextField text | defaultValue | 0.0            |   |   |
-    | Currency locale          | locale       | Locale.current |   |   |
-    
     public func setAmount (_ amount: Double) {
         let textFieldStringValue = amount.currencyStringValue(with: locale, currencySymbol)
         text = textFieldStringValue
