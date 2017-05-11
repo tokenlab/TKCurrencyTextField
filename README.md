@@ -2,9 +2,9 @@
 TKCurrencyTextField is a UITextField component that makes the currency string mask of the current or fixed locale.
 
 ## Example
-To run the example project, clone the repo and open `TKCurrencyTextField.xcodeproj`.
+To run the example project, clone the repo and open `TKCurrencyTextField.xcodeproj`
 
-![](https://github.com/tokenlab/TKCurrencyTextField/blob/readme/Screenshots/Example.gif)
+![](https://github.com/tokenlab/TKCurrencyTextField/blob/development/Screenshots/Example.gif)
 
 ## Requirements
 * Swift 3
@@ -30,22 +30,24 @@ pod 'TKCurrencyTextField', '~> 0.1'
 >note: "~> 0.1" means that we want version 0.1 and the versions up to 1.0, not including 1.0 and higher.
 
 ## How to use
-TKCurrencyTextField can be used simply setting custom class to UITextField.
-e.g:
+TKCurrencyTextField can be used simply setting custom class to UITextField:
 
+![](https://github.com/tokenlab/TKCurrencyTextField/blob/development/Screenshots/CustomClass.png)
 
-You can customize by Interface Builder or code.
-e.g:
+### Customization
+You may customize by Interface Builder or code.
 
-Example: set fixed locale to United States without currency symbol.
+E.g: Fixed locale to Brazil without currency symbol:
 
 ```swift
 @IBOutlet weak var currencyTextField: TKCurrencyTextField!
 
 override func viewDidLoad() {
     super.viewDidLoad()
-    currencyTextField.locale = Locale(identifier: "en_US") // United States
+    currencyTextField.defaultValue = 100.00
+    currencyTextField.maxDigits = 8
     currencyTextField.currencySymbol = false
+    currencyTextField.locale = Locale(identifier: "pt_BR") // Brazil
 }
 ```
 
@@ -55,17 +57,17 @@ To manually set an amount, use this function:
 currencyTextField.setAmount(123.45)
 ```
 
-To get textField amount as double:
+To get textField amount as Double:
 ```swift
 let currency = currencytTextField.getAmount
 ```
 
-## Default values:
+### Default values:
 
 | Definition                 | var               | type          |     value      |
 |:--------------------------:|:-----------------:|:-------------:|:--------------:|
 | Initial amount             | defaultValue      | Double        | 0.0            |
-| Maximum number of digits   | maxDigits         | Int           | 14             |
+| Maximum number of digits   | maxDigits         | Int           | 15             |
 | Show/Hide currency symbol  | currencySymbol    | Bool          | true           |
 | Currency of the country    | locale            | Locale        | Locale.current |
 
