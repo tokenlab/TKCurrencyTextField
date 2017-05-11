@@ -150,7 +150,7 @@
 				834D7ADF1EC3752E00579CB1 /* Double+Currency.swift */,
 				834D7AE01EC3752E00579CB1 /* String+Number.swift */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		834D7AE81EC3787300579CB1 /* Example */ = {
