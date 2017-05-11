@@ -16,7 +16,7 @@ To run the example project, clone the repo and open `TKCurrencyTextField.xcodepr
 Simply add the following lines to your Cartfile:
 
 ```ruby
-github 'tokenlab/TKCurrencyTextField', '~> 0.1'
+github 'tokenlab/TKCurrencyTextField', '~> 1.0'
 ```
 
 ### CocoaPods
@@ -25,9 +25,8 @@ it, simply add the following lines to your Podfile:
 
 ```ruby
 source 'https://github.com/tokenlab/TKPodSpecs'
-pod 'TKCurrencyTextField', '~> 0.1'
+pod 'TKCurrencyTextField', '~> 1.0'
 ```
->note: "~> 0.1" means that we want version 0.1 and the versions up to 1.0, not including 1.0 and higher.
 
 ## How to use
 TKCurrencyTextField can be used simply setting custom class to UITextField:
