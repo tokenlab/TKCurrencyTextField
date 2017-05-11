@@ -32,12 +32,15 @@ pod 'TKCurrencyTextField', '~> 0.1'
 ## How to use
 TKCurrencyTextField can be used simply setting custom class to UITextField:
 
-![](https://github.com/tokenlab/TKCurrencyTextField/blob/development/Screenshots/CustomClass.png)
+![] (https://github.com/tokenlab/TKCurrencyTextField/blob/readme/Screenshots/CustomClass.png)
 
 ### Customization
 You may customize by Interface Builder or code.
 
 E.g: Fixed locale to Brazil without currency symbol:
+
+![] (https://github.com/tokenlab/TKCurrencyTextField/blob/readme/Screenshots/InspectableExample.png)
+
 
 ```swift
 @IBOutlet weak var currencyTextField: TKCurrencyTextField!
