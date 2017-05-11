@@ -9,17 +9,33 @@
 import UIKit
 
 @IBDesignable open class TKCurrencyTextField: UITextField {
-    @IBInspectable var maxDigits: Int = 20
-    @IBInspectable var defaultValue: Double = 0.00
-    @IBInspectable var isCurrencySymbolHidden: Bool = false
-    private var _maskHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ())? = nil
-
+    
+    // MARK:- Public
+    
+    @IBInspectable public var maxDigits: Int = 15
+    @IBInspectable public var defaultValue: Double = 0.00
+    @IBInspectable public var currencySymbol: Bool = true
     public var locale: Locale = Locale.current {
         didSet {
             setAmount(defaultValue)
         }
     }
-
+    
+    public func setAmount (_ amount: Double) {
+        let textFieldStringValue = amount.currencyStringValue(with: locale, currencySymbol)
+        text = textFieldStringValue
+    }
+    
+    public var getAmount: Double {
+        if let text = text {
+            return text.currencyStringToDouble(with: locale)
+        }
+        return defaultValue
+    }
+    
+    // MARK:- Private vars
+    
+    private var _maskHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ())? = nil
     var maskHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ())? {
         get {
             return _maskHandler
@@ -54,7 +70,7 @@ import UIKit
             }
             
             let textFieldNewValue = textFieldNumber/100
-            let textFieldStringValue = textFieldNewValue.currencyStringValue(with: self.locale, self.isCurrencySymbolHidden)
+            let textFieldStringValue = textFieldNewValue.currencyStringValue(with: self.locale, self.currencySymbol)
             textField.text = textFieldStringValue
         }
         setMaskHandler(currencyHandler)
@@ -98,19 +114,4 @@ import UIKit
             }
         }
     }
-    
-    // MARK: - Custom functions
-    
-    public func setAmount (_ amount: Double) {
-        let textFieldStringValue = amount.currencyStringValue(with: locale, isCurrencySymbolHidden)
-        text = textFieldStringValue
-    }
-    
-    public var getAmount: Double {
-        if let text = text {
-            return text.currencyStringToDouble(with: locale)
-        }
-        return defaultValue
-    }
 }
-

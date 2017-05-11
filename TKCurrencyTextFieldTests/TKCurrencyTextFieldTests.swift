@@ -13,11 +13,9 @@ class TKCurrencyTextFieldTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
@@ -25,16 +23,14 @@ class TKCurrencyTextFieldTests: XCTestCase {
         let currencyTextField = TKCurrencyTextField()
         currencyTextField.locale = Locale(identifier: "en_US")
         currencyTextField.setAmount(1000.49)
-        
         XCTAssert(currencyTextField.text == "$1,000.49")
     }
     
     func testLocale_en_US_noCurrencySymbol() {
         let currencyTextField = TKCurrencyTextField()
         currencyTextField.locale = Locale(identifier: "pt_BR")
-        currencyTextField.isCurrencySymbolHidden = true
+        currencyTextField.currencySymbol = false
         currencyTextField.setAmount(1000.49)
-        
         XCTAssert(currencyTextField.text == "1.000,49")
     }
     
@@ -42,16 +38,14 @@ class TKCurrencyTextFieldTests: XCTestCase {
         let currencyTextField = TKCurrencyTextField()
         currencyTextField.locale = Locale(identifier: "pt_BR")
         currencyTextField.setAmount(1000.49)
-        
         XCTAssert(currencyTextField.text == "R$1.000,49")
     }
     
     func testLocale_pt_BR_noCurrencySymbol() {
         let currencyTextField = TKCurrencyTextField()
         currencyTextField.locale = Locale(identifier: "pt_BR")
-        currencyTextField.isCurrencySymbolHidden = true
+        currencyTextField.currencySymbol = false
         currencyTextField.setAmount(1000.49)
-        
         XCTAssert(currencyTextField.text == "1.000,49")
     }
     
@@ -65,8 +59,23 @@ class TKCurrencyTextFieldTests: XCTestCase {
     func testLocale_en_GB_noCurrencySymbol() {
         let currencyTextField = TKCurrencyTextField()
         currencyTextField.locale = Locale(identifier: "en_GB")
-        currencyTextField.isCurrencySymbolHidden = true
+        currencyTextField.currencySymbol = false
         currencyTextField.setAmount(2199999.22)
         XCTAssert(currencyTextField.text == "2,199,999.22")
+    }
+    
+    func testLocale_es_ES() {
+        let currencyTextField = TKCurrencyTextField()
+        currencyTextField.locale = Locale(identifier: "es_ES")
+        currencyTextField.setAmount(1234.56)
+        XCTAssert(currencyTextField.text == "1.234,56 €")
+    }
+    
+    func testLocale_es_ES_noCurrencySymbol() {
+        let currencyTextField = TKCurrencyTextField()
+        currencyTextField.locale = Locale(identifier: "es_ES")
+        currencyTextField.currencySymbol = false
+        currencyTextField.setAmount(1234.56)
+        XCTAssert(currencyTextField.text == "1.234,56 ")
     }
 }
