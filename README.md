@@ -4,7 +4,7 @@ TKCurrencyTextField is a UITextField component that makes the currency string ma
 ## Example
 To run the example project, clone the repo and open `TKCurrencyTextField.xcodeproj`
 
-![](https://github.com/tokenlab/TKCurrencyTextField/blob/development/Screenshots/Example.gif)
+![](https://github.com/tokenlab/TKCurrencyTextField/blob/master/Screenshots/Example.gif)
 
 ## Requirements
 * Swift 3
@@ -32,15 +32,14 @@ pod 'TKCurrencyTextField', '~> 0.1'
 ## How to use
 TKCurrencyTextField can be used simply setting custom class to UITextField:
 
-![] (https://github.com/tokenlab/TKCurrencyTextField/blob/readme/Screenshots/CustomClass.png)
+![](https://github.com/tokenlab/TKCurrencyTextField/blob/master/Screenshots/CustomClass.png)
 
 ### Customization
-You may customize by Interface Builder or code.
+You may customize by Interface Builder. E.g: Fixed locale to Brazil without currency symbol:
 
-E.g: Fixed locale to Brazil without currency symbol:
+![](https://github.com/tokenlab/TKCurrencyTextField/blob/master/Screenshots/InspectableExample.png)
 
-![] (https://github.com/tokenlab/TKCurrencyTextField/blob/readme/Screenshots/InspectableExample.png)
-
+Or code:
 
 ```swift
 @IBOutlet weak var currencyTextField: TKCurrencyTextField!
@@ -65,7 +64,7 @@ To get textField amount as Double:
 let currency = currencytTextField.getAmount
 ```
 
-### Default values:
+### Default values
 
 | Definition                 | var               | type          |     value      |
 |:--------------------------:|:-----------------:|:-------------:|:--------------:|
