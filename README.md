@@ -1,5 +1,5 @@
 # TKCurrencyTextField
-[![CI Status](https://img.shields.io/travis/tokenlab/TKCurrencyTextField.svg?style=flat)](https://travis-ci.org/tokenlab/TKCurrencyTextField)
+[![CI Status](https://img.shields.io/travis/tokenlab/TKCurrencyTextField.svg?style=flat)](https://travis-ci.org/tokenlab/TKCurrencyTextField) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 TKCurrencyTextField is a UITextField component that makes the currency string mask of the current or fixed locale.
 
