@@ -23,9 +23,5 @@ class MainTableViewController: UITableViewController {
         fourthCurrencyTextField.locale = Locale(identifier: "pt_BR") // Brazil
         fifthCurrencyTextField.locale = Locale(identifier: "es_ES") // Spain
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
 
