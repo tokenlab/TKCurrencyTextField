@@ -74,7 +74,7 @@ import UIKit
             let formatter:NumberFormatter = NumberFormatter()
             formatter.locale = self.locale
             formatter.numberStyle = .currency
-            if !text.contains(formatter.currencySymbol) {
+            if !text.contains(formatter.currencySymbol) && cleanNumericString.characters.count > 0 {
                 let lastIndex: String.Index = cleanNumericString.endIndex;
                cleanNumericString = cleanNumericString.substring(to: cleanNumericString.index(before: lastIndex))
             }
@@ -139,5 +139,16 @@ import UIKit
                 self.selectedTextRange = newSelectedRange
             }
         }
+    }
+    
+    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        
+        if action == #selector(UITextField.paste(_:))
+        || action == #selector(UITextField.copy(_:))
+        || action == #selector(UITextField.cut(_:)) {
+            return false
+        }
+        
+        return super.canPerformAction(action, withSender: sender)
     }
 }
