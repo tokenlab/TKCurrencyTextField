@@ -54,21 +54,40 @@ import UIKit
         initTextField()
     }
     
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        initTextField()
+    }
+    
     private func initTextField(){
         let currencyHandler: ((_ textField: UITextField, _ range: NSRange, _ replacementString: String) -> ()) = {
             (textField, range, replacementString) in
             let nsString: NSString = textField.text as NSString? ?? ""
             let text = nsString.replacingCharacters(in: range, with: replacementString)
-            let cleanNumericString: String = text.onlyNumberString
+            
+            //Remove mask from newText
+            var cleanNumericString: String = text.onlyNumberString
             var textFieldNumber: Double = 0.0
             
+            //Check if currency symbol was replaced
+            // In case currency symbol was replaced, erase last character
+            let formatter:NumberFormatter = NumberFormatter()
+            formatter.locale = self.locale
+            formatter.numberStyle = .currency
+            if !text.contains(formatter.currencySymbol) && cleanNumericString.characters.count > 0 {
+                let lastIndex: String.Index = cleanNumericString.endIndex;
+               cleanNumericString = cleanNumericString.substring(to: cleanNumericString.index(before: lastIndex))
+            }
+            
+            //Checks if number of digits exceeded max
             if cleanNumericString.characters.count > self.maxDigits {
                 let limitString = cleanNumericString.substring(to: cleanNumericString.characters.index(cleanNumericString.startIndex, offsetBy: self.maxDigits))
                 textFieldNumber = (limitString as NSString).doubleValue
             } else {
                 textFieldNumber = (cleanNumericString as NSString).doubleValue
             }
-            
+
+            //Applies mask
             let textFieldNewValue = textFieldNumber/100
             let textFieldStringValue = textFieldNewValue.currencyStringValue(with: self.locale, self.currencySymbol)
             textField.text = textFieldStringValue
@@ -93,6 +112,13 @@ import UIKit
         setCursorOriginalPosition(cursorOffset, oldTextFieldLength: textFieldLength)
     }
     
+    
+    override open func closestPosition(to point: CGPoint) -> UITextPosition? {
+        let beginning:UITextPosition = self.beginningOfDocument
+        let end:UITextPosition? = self.position(from: beginning, offset: self.text?.characters.count ?? 0)
+        return end
+    }
+    
     private func getOriginalCursorPosition() -> Int {
         var cursorOffset: Int = 0
         let startPosition: UITextPosition = self.beginningOfDocument
@@ -113,5 +139,16 @@ import UIKit
                 self.selectedTextRange = newSelectedRange
             }
         }
+    }
+    
+    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        
+        if action == #selector(UITextField.paste(_:))
+        || action == #selector(UITextField.copy(_:))
+        || action == #selector(UITextField.cut(_:)) {
+            return false
+        }
+        
+        return super.canPerformAction(action, withSender: sender)
     }
 }
