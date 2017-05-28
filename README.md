@@ -10,7 +10,7 @@ To run the example project, clone the repo and open `TKCurrencyTextField.xcodepr
 
 ## Requirements
 * Swift 3
-* Deployment target 8.0
+* iOS 8.0 or higher
 
 
 ## Installation
@@ -18,7 +18,7 @@ To run the example project, clone the repo and open `TKCurrencyTextField.xcodepr
 Simply add the following lines to your Cartfile:
 
 ```ruby
-github 'tokenlab/TKCurrencyTextField', '~> 1.0'
+github 'tokenlab/TKCurrencyTextField'
 ```
 
 ### CocoaPods
@@ -26,8 +26,7 @@ TKCurrencyTextField is available through Tokenlab's [TKPodSpec](https://github.c
 it, simply add the following lines to your Podfile:
 
 ```ruby
-source 'https://github.com/tokenlab/TKPodSpecs'
-pod 'TKCurrencyTextField', '~> 1.0'
+pod 'TKCurrencyTextField', :git => 'https://github.com/tokenlab/TKPodSpecs.git'
 ```
 
 ## How to use
