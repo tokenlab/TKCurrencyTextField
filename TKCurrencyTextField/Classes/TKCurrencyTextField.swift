@@ -110,8 +110,8 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
     }
     
     override open func closestPosition(to point: CGPoint) -> UITextPosition? {
-        let beginning:UITextPosition = self.beginningOfDocument
-        let end:UITextPosition? = self.position(from: beginning, offset: self.text?.characters.count ?? 0)
+        let beginning: UITextPosition = self.beginningOfDocument
+        let end: UITextPosition? = self.position(from: beginning, offset: self.text?.characters.count ?? 0)
         return end
     }
     
