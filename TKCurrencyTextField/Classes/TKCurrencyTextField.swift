@@ -51,11 +51,11 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
         let nsString: NSString = textField.text as NSString? ?? ""
         let text = nsString.replacingCharacters(in: range, with: replacementString)
         
-        //Remove mask from newText
+        // Remove mask from newText
         var cleanNumericString: String = text.onlyNumberString
         var textFieldNumber: Double = 0.0
         
-        //Check if currency symbol was replaced
+        // Check if currency symbol was replaced
         // In case currency symbol was replaced, erase last character
         let formatter:NumberFormatter = NumberFormatter()
         formatter.locale = self.locale
@@ -65,7 +65,7 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
             cleanNumericString = cleanNumericString.substring(to: cleanNumericString.index(before: lastIndex))
         }
         
-        //Checks if number of digits exceeded max
+        // Checks if number of digits exceeded max
         if cleanNumericString.characters.count > self.maxDigits {
             let limitString = cleanNumericString.substring(to: cleanNumericString.characters.index(cleanNumericString.startIndex, offsetBy: self.maxDigits))
             textFieldNumber = (limitString as NSString).doubleValue
@@ -73,13 +73,13 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
             textFieldNumber = (cleanNumericString as NSString).doubleValue
         }
         
-        //Applies mask
+        // Applies mask
         let textFieldNewValue = textFieldNumber/100
         let textFieldStringValue = textFieldNewValue.currencyStringValue(with: self.locale, self.currencySymbol)
         textField.text = textFieldStringValue
     }
     
-    // MARK: - init functions
+    // MARK: - Init functions
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -103,7 +103,7 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
     }
     
     func textDidChange() {
-        // get the original position of the cursor
+        // Get the original position of the cursor
         maskHandler(self, NSRange(), "")
     }
     
