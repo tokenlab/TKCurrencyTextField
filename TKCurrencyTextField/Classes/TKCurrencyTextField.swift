@@ -37,7 +37,6 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
             if let text = text {
                 return text.currencyStringToDouble(with: locale)
             }
-            
             return defaultValue
         }
         
@@ -101,7 +100,6 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
         amount = defaultValue
         keyboardType = .decimalPad
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-
     }
     
     func textDidChange() {
@@ -116,13 +114,11 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
     }
     
     open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        
         if action == #selector(UITextField.paste(_:))
         || action == #selector(UITextField.copy(_:))
         || action == #selector(UITextField.cut(_:)) {
             return false
         }
-        
         return super.canPerformAction(action, withSender: sender)
     }
 }
