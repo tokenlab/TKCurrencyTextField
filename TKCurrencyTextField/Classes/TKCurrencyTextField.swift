@@ -8,11 +8,36 @@
 
 import UIKit
 
+@objc protocol TKCurrencyTextFieldMixin: class {
+    var maxDigits: Int {get set}
+    var defaultValue: Double {get set}
+    var currencySymbol: Bool {get set}
+    var locale: Locale {get set}
+    @objc var text: String? {get set}
+    @objc var keyboardType: UIKeyboardType {get set}
+}
+
+extension TKCurrencyTextFieldMixin {
+
+    public var amount: Double {
+        get {
+            if let text = text {
+                return text.currencyStringToDouble(with: locale)
+            }
+            return defaultValue
+        }
+        set {
+            let textFieldStringValue = amount.currencyStringValue(with: locale, currencySymbol)
+            text = textFieldStringValue
+        }
+    }
+}
+
 public typealias ReplacementString = String
 public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementString) -> () // Can be used on textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
 
-@IBDesignable open class TKCurrencyTextField: UITextField {
-    
+@IBDesignable open class TKCurrencyTextField: UITextField, TKCurrencyTextFieldMixin {
+
     // MARK:- Public
     
     @IBInspectable public var maxDigits: Int = 15
@@ -21,32 +46,19 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
             self.textDidChange()
         }
     }
+    
     @IBInspectable public var currencySymbol: Bool = true {
         didSet {
             self.textDidChange()
         }
     }
+    
     public var locale: Locale = Locale.current {
         didSet {
             self.textDidChange()
         }
     }
     
-    public var amount: Double {
-        get {
-            if let text = text {
-                return text.currencyStringToDouble(with: locale)
-            }
-            
-            return defaultValue
-        }
-        
-        set {
-            let textFieldStringValue = amount.currencyStringValue(with: locale, currencySymbol)
-            text = textFieldStringValue
-        }
-    }
-
     lazy var maskHandler: ReplacementStringHandler = {
         (textField, range, replacementString) in
         let nsString: NSString = textField.text as NSString? ?? ""
@@ -79,6 +91,7 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
         let textFieldStringValue = textFieldNewValue.currencyStringValue(with: self.locale, self.currencySymbol)
         textField.text = textFieldStringValue
     }
+
     
     // MARK: - init functions
     
@@ -101,7 +114,6 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
         amount = defaultValue
         keyboardType = .decimalPad
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-
     }
     
     func textDidChange() {
