@@ -37,7 +37,6 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
             if let text = text {
                 return text.currencyStringToDouble(with: locale)
             }
-            
             return defaultValue
         }
         
@@ -54,10 +53,10 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
         
         //Remove mask from newText
         var cleanNumericString = text.onlyNumberString
-        var textFieldNumber:Double = 0.0
+        var textFieldNumber: Double = 0.0
         
-        //Check if currency symbol was replaced
-        //In case currency symbol was replaced, erase last character
+        // Check if currency symbol was replaced
+        // In case currency symbol was replaced, erase last character
         let formatter = NumberFormatter()
         formatter.locale = self.locale
         formatter.numberStyle = .currency
@@ -67,7 +66,7 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
             cleanNumericString = cleanNumericString.substring(to: cleanNumericString.index(before: lastIndex))
         }
         
-        //Checks if number of digits exceeded max
+        // Checks if number of digits exceeded max
         if cleanNumericString.characters.count > self.maxDigits {
             let limitString = cleanNumericString.substring(to: cleanNumericString.characters.index(cleanNumericString.startIndex, offsetBy: self.maxDigits))
             textFieldNumber = (limitString as NSString).doubleValue
@@ -75,13 +74,13 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
             textFieldNumber = (cleanNumericString as NSString).doubleValue
         }
         
-        //Applies mask
+        // Applies mask
         let textFieldNewValue = textFieldNumber/100
         let textFieldStringValue = textFieldNewValue.currencyStringValue(with: self.locale, self.currencySymbol)
         textField.text = textFieldStringValue
     }
     
-    // MARK: - init functions
+    // MARK: - Init functions
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -102,11 +101,10 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
         amount = defaultValue
         keyboardType = .decimalPad
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-
     }
     
     func textDidChange() {
-        //Get the original position of the cursor
+        // Get the original position of the cursor
         maskHandler(self, NSRange(), "")
     }
     
@@ -117,13 +115,11 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
     }
     
     open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        
         if action == #selector(UITextField.paste(_:))
         || action == #selector(UITextField.copy(_:))
         || action == #selector(UITextField.cut(_:)) {
             return false
         }
-        
         return super.canPerformAction(action, withSender: sender)
     }
 }
