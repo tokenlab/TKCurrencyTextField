@@ -49,18 +49,19 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
 
     lazy var maskHandler: ReplacementStringHandler = {
         (textField, range, replacementString) in
-        let nsString: NSString = textField.text as NSString? ?? ""
+        let nsString = NSString.init(string: textField.text ?? "")
         let text = nsString.replacingCharacters(in: range, with: replacementString)
         
         //Remove mask from newText
-        var cleanNumericString: String = text.onlyNumberString
-        var textFieldNumber: Double = 0.0
+        var cleanNumericString = text.onlyNumberString
+        var textFieldNumber:Double = 0.0
         
         //Check if currency symbol was replaced
-        // In case currency symbol was replaced, erase last character
-        let formatter:NumberFormatter = NumberFormatter()
+        //In case currency symbol was replaced, erase last character
+        let formatter = NumberFormatter()
         formatter.locale = self.locale
         formatter.numberStyle = .currency
+        
         if self.currencySymbol && !text.contains(formatter.currencySymbol) && cleanNumericString.characters.count > 0 {
             let lastIndex: String.Index = cleanNumericString.endIndex;
             cleanNumericString = cleanNumericString.substring(to: cleanNumericString.index(before: lastIndex))
@@ -105,13 +106,13 @@ public typealias ReplacementStringHandler = (UITextField, NSRange, ReplacementSt
     }
     
     func textDidChange() {
-        // get the original position of the cursor
+        //Get the original position of the cursor
         maskHandler(self, NSRange(), "")
     }
     
     override open func closestPosition(to point: CGPoint) -> UITextPosition? {
-        let beginning:UITextPosition = self.beginningOfDocument
-        let end:UITextPosition? = self.position(from: beginning, offset: self.text?.characters.count ?? 0)
+        let beginning = self.beginningOfDocument
+        let end = self.position(from: beginning, offset: self.text?.characters.count ?? 0)
         return end
     }
     
